@@ -12,8 +12,8 @@ struct ContentView: View {
 
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 0) {
-                        header
-                            .padding(.top, 12)
+                        demoMark
+                            .padding(.top, 8)
 
                         Spacer(minLength: 86)
 
@@ -41,31 +41,17 @@ struct ContentView: View {
         }
     }
 
-    private var header: some View {
+    private var demoMark: some View {
         HStack {
-            HStack(spacing: 9) {
-                Text("L")
-                    .font(.system(size: 19, weight: .bold, design: .rounded))
-                    .foregroundStyle(.white)
-                    .frame(width: 34, height: 34)
-                    .background(Color(red: 0.31, green: 0.27, blue: 0.83))
-                    .clipShape(RoundedRectangle(cornerRadius: 11, style: .continuous))
-
-                Text("Lumi")
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color.black.opacity(0.82))
-            }
-
             Spacer()
-
-            Button {
-                notice = .help
-            } label: {
-                Image(systemName: "questionmark.circle")
-                    .font(.system(size: 25, weight: .regular))
-                    .foregroundStyle(Color.black.opacity(0.78))
-            }
-            .accessibilityLabel("Trợ giúp bản demo")
+            Text("LUMI DEMO")
+                .font(.system(size: 10, weight: .bold, design: .rounded))
+                .tracking(1.2)
+                .foregroundStyle(Color.black.opacity(0.52))
+                .padding(.horizontal, 10)
+                .padding(.vertical, 6)
+                .background(.white.opacity(0.38))
+                .clipShape(Capsule())
         }
     }
 
@@ -74,7 +60,7 @@ struct ContentView: View {
             Text("Chào buổi tối,")
                 .font(.system(size: 35, weight: .regular, design: .rounded))
 
-            Text("MINH ANH")
+            Text("TON THAT ANH TAI")
                 .font(.system(size: 40, weight: .bold, design: .rounded))
                 .tracking(-1.2)
         }
@@ -91,7 +77,7 @@ struct ContentView: View {
                 QuickAction(icon: "qrcode", title: "Quét mã\nQR") {
                     notice = .qr
                 }
-                QuickAction(icon: "gift", title: "Ưu đãi\nLumi") {
+                QuickAction(icon: "gift", title: "Lumi Demo\nƯu đãi") {
                     notice = .offers
                 }
             }
@@ -100,7 +86,7 @@ struct ContentView: View {
                 Button {
                     notice = .login
                 } label: {
-                    Text("Xem bản demo")
+                    Text("Đăng nhập (demo)")
                         .font(.system(size: 21, weight: .bold, design: .rounded))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 18)
@@ -113,7 +99,7 @@ struct ContentView: View {
                 Button {
                     notice = .personalQR
                 } label: {
-                    Text("Mã QR cá nhân · Demo")
+                    Text("Mã QR cá nhân (demo)")
                         .font(.system(size: 19, weight: .semibold, design: .rounded))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 17)
