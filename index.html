@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lumi Bank - prototype giao diện ngân hàng hư cấu" />
+    <title>Lumi Bank · Demo dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="demo-strip">
+      <span class="demo-dot"></span>
+      BẢN DEMO HƯ CẤU · Không kết nối ngân hàng và không xử lý giao dịch thật
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Điều hướng chính">
+        <a class="brand" href="#overview" aria-label="Lumi Bank trang chủ">
+          <span class="brand-mark">L</span>
+          <span>Lumi<span class="brand-muted">bank</span></span>
+        </a>
+
+        <div class="profile-card">
+          <div class="avatar">MA</div>
+          <div>
+            <strong>Minh Anh</strong>
+            <span>Tài khoản cá nhân</span>
+          </div>
+          <button class="icon-btn" aria-label="Tuỳ chọn tài khoản">•••</button>
+        </div>
+
+        <nav class="main-nav">
+          <a class="nav-item active" href="#overview" data-section="overview"><span class="nav-icon">⌂</span>Tổng quan</a>
+          <a class="nav-item" href="#accounts" data-section="accounts"><span class="nav-icon">◫</span>Tài khoản</a>
+          <a class="nav-item" href="#cards" data-section="cards"><span class="nav-icon">▣</span>Thẻ của tôi</a>
+          <a class="nav-item" href="#payments" data-section="payments"><span class="nav-icon">↗</span>Thanh toán</a>
+          <a class="nav-item" href="#savings" data-section="savings"><span class="nav-icon">◒</span>Tiết kiệm</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a class="nav-item" href="#help"><span class="nav-icon">?</span>Trợ giúp</a>
+          <a class="nav-item" href="#settings"><span class="nav-icon">⚙</span>Cài đặt</a>
+          <div class="security-note"><span class="lock">⌁</span><span><strong>An toàn mỗi ngày</strong><small>Dữ liệu chỉ là dữ liệu mẫu</small></span></div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="overview">
+        <header class="topbar">
+          <div class="mobile-brand"><span class="brand-mark">L</span>Lumi<span class="brand-muted">bank</span></div>
+          <div class="topbar-actions">
+            <button class="round-btn" aria-label="Thông báo"><span class="notification-dot"></span>♧</button>
+            <button class="round-btn" aria-label="Trợ giúp">?</button>
+            <div class="top-avatar">MA</div>
+          </div>
+        </header>
+
+        <div class="content-wrap">
+          <section class="welcome-row">
+            <div>
+              <p class="eyebrow">THỨ NĂM, 14 THÁNG 11, 2026</p>
+              <h1>Chào buổi sáng, Minh Anh <span class="wave">✦</span></h1>
+              <p class="muted">Đây là bản xem trước tài chính của bạn hôm nay.</p>
+            </div>
+            <button class="primary-btn" data-action="transfer"><span>＋</span> Tạo giao dịch</button>
+          </section>
+
+          <section class="overview-grid" aria-label="Tổng quan tài chính">
+            <article class="balance-card accent-card">
+              <div class="card-heading"><span>SỐ DƯ KHẢ DỤNG</span><button class="eye-btn" id="toggleBalance" aria-label="Ẩn hoặc hiện số dư">◉</button></div>
+              <div class="balance-value" id="balanceValue">24.680.000 <small>₫</small></div>
+              <div class="balance-meta"><span class="trend up">↗ 4,8%</span><span>so với tháng trước</span></div>
+              <div class="card-footer"><span>Tài khoản thanh toán</span><span>•• 2864</span></div>
+            </article>
+
+            <article class="stat-card">
+              <div class="card-heading"><span>CHI TIÊU THÁNG NÀY</span><span class="soft-icon coral">↘</span></div>
+              <div class="stat-value">8.420.000 <small>₫</small></div>
+              <div class="progress-track"><div class="progress-fill coral-fill" style="width: 62%"></div></div>
+              <div class="stat-foot"><span>62% ngân sách</span><strong>Còn 5.080.000 ₫</strong></div>
+            </article>
+
+            <article class="stat-card">
+              <div class="card-heading"><span>TIỀN TIẾT KIỆM</span><span class="soft-icon mint">✦</span></div>
+              <div class="stat-value">56.200.000 <small>₫</small></div>
+              <div class="progress-track"><div class="progress-fill mint-fill" style="width: 78%"></div></div>
+              <div class="stat-foot"><span>+ 1.200.000 ₫ tháng này</span><strong>78% mục tiêu</strong></div>
+            </article>
+          </section>
+
+          <section class="quick-actions">
+            <div class="section-heading"><div><p class="eyebrow">THAO TÁC NHANH</p><h2>Bạn muốn làm gì?</h2></div></div>
+            <div class="action-grid">
+              <button class="action-card" data-action="transfer"><span class="action-icon purple">↗</span><span>Chuyển tiền</span><small>Đến tài khoản khác</small><b>→</b></button>
+              <button class="action-card" data-action="bill"><span class="action-icon orange">⌁</span><span>Thanh toán hoá đơn</span><small>Điện, nước, internet</small><b>→</b></button>
+              <button class="action-card" data-action="topup"><span class="action-icon blue">＋</span><span>Nạp tiền điện thoại</span><small>Cho bạn và người thân</small><b>→</b></button>
+              <button class="action-card" data-action="qr"><span class="action-icon green">▦</span><span>Quét mã QR</span><small>Thanh toán nhanh chóng</small><b>→</b></button>
+            </div>
+          </section>
+
+          <section class="lower-grid">
+            <article class="panel transactions-panel">
+              <div class="panel-header"><div><p class="eyebrow">HOẠT ĐỘNG GẦN ĐÂY</p><h2>Giao dịch</h2></div><button class="text-btn" id="viewAll">Xem tất cả <span>→</span></button></div>
+              <div class="transaction-list" id="transactionList">
+                <div class="transaction"><span class="merchant-icon food">✦</span><div class="transaction-info"><strong>BeFood</strong><small>Hôm nay, 12:42</small></div><div class="transaction-amount debit">- 86.000 ₫<small>Đã hoàn tất</small></div></div>
+                <div class="transaction"><span class="merchant-icon salary">↙</span><div class="transaction-info"><strong>Công ty Lumi</strong><small>Hôm nay, 09:10</small></div><div class="transaction-amount credit">+ 18.500.000 ₫<small>Đã hoàn tất</small></div></div>
+                <div class="transaction"><span class="merchant-icon shop">▦</span><div class="transaction-info"><strong>Co.opmart</strong><small>13 tháng 11, 18:26</small></div><div class="transaction-amount debit">- 532.000 ₫<small>Đã hoàn tất</small></div></div>
+                <div class="transaction"><span class="merchant-icon transport">↗</span><div class="transaction-info"><strong>Grab</strong><small>13 tháng 11, 08:45</small></div><div class="transaction-amount debit">- 74.000 ₫<small>Đã hoàn tất</small></div></div>
+              </div>
+            </article>
+
+            <article class="panel goal-panel">
+              <div class="panel-header"><div><p class="eyebrow">MỤC TIÊU CỦA BẠN</p><h2>Du lịch Nhật Bản</h2></div><button class="more-btn" aria-label="Tuỳ chọn mục tiêu">•••</button></div>
+              <div class="goal-visual"><div class="goal-ring"><div><strong>68%</strong><small>đã đạt</small></div></div><div><span class="goal-current">68.000.000 ₫</span><span class="muted">/ 100.000.000 ₫</span><p>Còn 4 tháng</p></div></div>
+              <div class="goal-tip"><span>✦</span><p><strong>Bạn đang đi đúng hướng!</strong><br />Tiết kiệm thêm 8.000.000 ₫ mỗi tháng để đạt mục tiêu.</p></div>
+            </article>
+          </section>
+
+          <footer class="page-footer"><span>© 2026 Lumi Bank · Giao diện minh hoạ</span><span>Dữ liệu mẫu · Không phải dịch vụ tài chính</span></footer>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
